@@ -43,7 +43,7 @@ public class PostController {
                 throw new ConditionsNotMetException("Описание не может быть пустым");
             }
             oldPost.setDescription(newPost.getDescription());
-            return newPost;
+            return oldPost;
         }
         throw new NotFoundException("Пост с id = " + newPost.getId() + " не найден");
     }
