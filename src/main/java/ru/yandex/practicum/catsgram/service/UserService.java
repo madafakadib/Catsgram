@@ -1,8 +1,6 @@
 package ru.yandex.practicum.catsgram.service;
 
-import org.springframework.expression.spel.ast.OpAnd;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 import ru.yandex.practicum.catsgram.exception.ConditionsNotMetException;
 import ru.yandex.practicum.catsgram.exception.DuplicatedDataException;
 import ru.yandex.practicum.catsgram.exception.NotFoundException;
