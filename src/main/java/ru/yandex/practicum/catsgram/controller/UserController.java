@@ -9,6 +9,7 @@ import java.time.Instant;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -23,6 +24,11 @@ public class UserController {
     @GetMapping
     public Collection<User> findAll() {
         return userService.findAll();
+    }
+
+    @GetMapping("/{userId}")
+    public Optional<User> findUserById(@PathVariable long userId) {
+        return userService.findUserById(userId);
     }
 
     @PostMapping

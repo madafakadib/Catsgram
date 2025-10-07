@@ -10,6 +10,7 @@ import java.time.Instant;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class PostService {
@@ -18,6 +19,10 @@ public class PostService {
 
     public Collection<Post> findAll() {
         return posts.values();
+    }
+
+    public Optional<Post> findPostById(long postId) {
+        return Optional.ofNullable(posts.get(postId));
     }
 
     public Post create(Post post) {

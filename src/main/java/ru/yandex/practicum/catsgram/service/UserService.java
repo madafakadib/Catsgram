@@ -1,5 +1,6 @@
 package ru.yandex.practicum.catsgram.service;
 
+import org.springframework.expression.spel.ast.OpAnd;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import ru.yandex.practicum.catsgram.exception.ConditionsNotMetException;
@@ -11,6 +12,7 @@ import java.time.Instant;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -19,6 +21,10 @@ public class UserService {
 
     public Collection<User> findAll() {
         return users.values();
+    }
+
+    public Optional<User> findUserById(long userId) {
+        return Optional.ofNullable(users.get(userId));
     }
 
     public User addUser(User user) {
