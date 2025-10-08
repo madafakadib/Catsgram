@@ -1,5 +1,6 @@
 package ru.yandex.practicum.catsgram.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.yandex.practicum.catsgram.exception.*;
 import ru.yandex.practicum.catsgram.model.User;
@@ -29,11 +30,13 @@ public class UserController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public User addUser(@RequestBody User user) {
         return userService.addUser(user);
     }
 
     @PutMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public User updateUser(@RequestBody User newUser) {
         return userService.updateUser(newUser);
     }
